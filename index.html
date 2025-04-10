@@ -436,7 +436,7 @@
 
 
     async function baixarTarefas() {
-      var tarefas = await fetch("http://localhost:8080/tarefas")
+      var tarefas = await fetch("https://tarefas-zswk.onrender.com/tarefas")
       var listaDeTarefas = await tarefas.json()
       olHTML.innerHTML = ""
       listaDeTarefas.forEach((tarefa, index) => {
@@ -455,7 +455,7 @@
     async function salvartarefa() {
       let tarefa = document.getElementById("tarefa").value
       let categoria = document.getElementById("categoria").value
-      let req = await fetch("http://localhost:8080/tarefa", {
+      let req = await fetch("https://tarefas-zswk.onrender.com/tarefa", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -468,7 +468,7 @@
     }
 
     async function excluirTarefa(index) {
-      let req = await fetch("http://localhost:8080/tarefa/" + index, { method: "DELETE" })
+      let req = await fetch("https://tarefas-zswk.onrender.com/tarefa/" + index, { method: "DELETE" })
       baixarTarefas()
     }
 
