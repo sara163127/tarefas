@@ -40,7 +40,7 @@ app.delete("/tarefa/:id", (req, res) => {
     db.run(`DELETE FROM Tarefas WHERE id == (?)`,[id])
    
 })
-app.get("/home", ()=>{
+app.get("/home", (req,res)=>{
     res.sendFile('index.html', { root: __dirname})
 })
 
