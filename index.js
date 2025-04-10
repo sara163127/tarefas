@@ -8,7 +8,7 @@ const path = require("path")
 app.use(bp.json())
 app.use(bp.urlencoded())
 app.use(cors())
-res.sendFile(Path.join(__dirname,'index.html'))
+
 
 const db = new sqlite3.Database("./db.sqlite")
 
